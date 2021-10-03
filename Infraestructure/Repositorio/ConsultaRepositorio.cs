@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Infraestructure.Repositorio
 {
-    public class ConsultaRepositorio : IGenericoRepository<Consulta>
+    public class ConsultaRepositorio : IConsultaRepositorio
     {
 
         private readonly AgendamentoDbContext _context;
@@ -53,5 +53,12 @@ namespace Infraestructure.Repositorio
         {
             return _context.Consultas.SingleOrDefault(c => c.Id == id);
         }
+
+        public Consulta ObterMarcacaoPorData( DateTime dataDeConsulta)
+        {
+            return _context.Consultas.SingleOrDefault(c => c.DataDaConsulta == dataDeConsulta);
+        }
+
+        
     }
 }

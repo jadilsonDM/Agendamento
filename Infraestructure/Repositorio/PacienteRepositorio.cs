@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Infraestructure.Repositorio
 {
-    public class PacienteRepositorio : IGenericoRepository<Paciente>
+    public class PacienteRepositorio : IPacienteRepositorio
     {
         private readonly AgendamentoDbContext _context;
 
@@ -23,6 +24,7 @@ namespace Infraestructure.Repositorio
             _context.SaveChanges();
             return model;
         }
+
         public void Atualizar(int id, Paciente model)
         {
             var paciente = ObterUm(id);
@@ -51,6 +53,11 @@ namespace Infraestructure.Repositorio
         public Paciente ObterUm(int id)
         {
            return _context.Pacientes.SingleOrDefault(p => p.Id == id);
+        }
+
+        public Paciente ObterPorCPF(string CPF)
+        {
+            return _context.Pacientes.SingleOrDefault(p => p.CPF == CPF);
         }
     }
 }

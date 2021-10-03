@@ -1,4 +1,7 @@
+using Core.Entity;
+using Core.Interface;
 using Infraestructure.Persistence;
+using Infraestructure.Repositorio;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,7 +30,10 @@ namespace Agendamento
         {
             services.AddControllersWithViews();
             services.AddDbContext<AgendamentoDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Conexao")));
-            
+            services.AddScoped<IPacienteRepositorio, PacienteRepositorio>();
+            services.AddScoped<IConsultaRepositorio, ConsultaRepositorio>();
+            services.AddScoped<IGenericoRepository<Exame>, ExameRepositorio>();
+            services.AddScoped<IGenericoRepository<TipoDeExame>, TipoDeExameRepositorio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

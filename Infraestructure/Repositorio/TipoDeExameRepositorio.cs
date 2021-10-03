@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Infraestructure.Repositorio
 {
-    class TipoDeExameRepositorio : IGenericoRepository<TipoDeExame>
+    public class TipoDeExameRepositorio : IGenericoRepository<TipoDeExame>
     {
 
         private readonly AgendamentoDbContext _context;
