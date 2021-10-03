@@ -1523,9 +1523,6 @@
       "Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "5.0.10"
-        },
         "compile": {
           "bin/placeholder/Core.dll": {}
         },

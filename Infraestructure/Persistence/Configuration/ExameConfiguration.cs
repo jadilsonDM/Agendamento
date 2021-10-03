@@ -21,9 +21,10 @@ namespace Infraestructure.Persistence.Configuration
             builder
                  .Property(e => e.Observacao)
                 .HasMaxLength(100);
+
             builder
-                 .Property(e => e.TipoDeExame)
-                .IsRequired();
+                .HasOne(e => e.TipoDeExame)
+                .WithMany(t => t.Exames);
         }
     }
 }
