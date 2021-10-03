@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Interface
+namespace Application.Serviços.Interface
 {
     public interface IGenericoServico<S>
     {

@@ -14,6 +14,7 @@ namespace Core.Entity
         public Paciente Paciente { get; private set; }
         public Exame Exame { get; private set; }
         public TipoDeExame TipoDeExame { get; private set; }
+
         protected Consulta()
         {
 

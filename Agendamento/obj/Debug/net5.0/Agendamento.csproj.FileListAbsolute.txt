@@ -152,3 +152,5 @@ C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Agendamento.pdb
 C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Agendamento.genruntimeconfig.cache
 C:\Users\jadil\Desktop\Agendamento\Agendamento\bin\Debug\net5.0\Application.dll
 C:\Users\jadil\Desktop\Agendamento\Agendamento\bin\Debug\net5.0\Application.pdb
+C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Razor\Views\Paciente\Index.cshtml.g.cs
+C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Razor\Views\Paciente\Create.cshtml.g.cs

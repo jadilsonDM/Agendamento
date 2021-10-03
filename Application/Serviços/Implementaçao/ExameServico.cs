@@ -1,12 +1,9 @@
-﻿using Core.Entity;
+﻿using Application.Serviços.Interface;
+using Core.Entity;
 using Core.Interface;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Application.Serviços
+namespace Application.Serviços.Implmentacao
 {
     public class ExameServico : IGenericoServico<Exame>
     {

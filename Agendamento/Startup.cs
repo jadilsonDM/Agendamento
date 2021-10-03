@@ -1,19 +1,15 @@
-using Application.Serviços;
+using Application.Serviços.Implmentacao;
+using Application.Serviços.Interface;
 using Core.Entity;
 using Core.Interface;
 using Infraestructure.Persistence;
 using Infraestructure.Repositorio;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Agendamento
 {
