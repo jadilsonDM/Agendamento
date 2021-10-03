@@ -150,3 +150,5 @@ C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Agendamento.dll
 C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\ref\Agendamento.dll
 C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Agendamento.pdb
 C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Agendamento.genruntimeconfig.cache
+C:\Users\jadil\Desktop\Agendamento\Agendamento\bin\Debug\net5.0\Application.dll
+C:\Users\jadil\Desktop\Agendamento\Agendamento\bin\Debug\net5.0\Application.pdb

@@ -1,3 +1,4 @@
+using Application.Serviços;
 using Core.Entity;
 using Core.Interface;
 using Infraestructure.Persistence;
@@ -34,6 +35,10 @@ namespace Agendamento
             services.AddScoped<IConsultaRepositorio, ConsultaRepositorio>();
             services.AddScoped<IGenericoRepository<Exame>, ExameRepositorio>();
             services.AddScoped<IGenericoRepository<TipoDeExame>, TipoDeExameRepositorio>();
+            services.AddScoped<IPacienteServico, PacienteServico>();
+            services.AddScoped<IConsultaServico, ConsultaServico>();
+            services.AddScoped<IGenericoServico<Exame>, ExameServico>();
+            services.AddScoped<IGenericoServico<TipoDeExame>, TipoDeExameServico>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
