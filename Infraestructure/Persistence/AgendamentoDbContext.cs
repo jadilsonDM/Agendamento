@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,23 +23,7 @@ namespace Infraestructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
-
-            modelBuilder.Entity<TipoDeExame>()
-                .HasKey(e => e.Id);
-            modelBuilder.Entity<TipoDeExame>()
-                .Property(e => e.NomeDoTipo)
-                .HasMaxLength(100);
-            modelBuilder.Entity<TipoDeExame>()
-                .Property(e => e.Descricao)
-                .HasMaxLength(256);
-
-            modelBuilder.Entity<Paciente>()
-                .HasKey(e => e.Id);
-            modelBuilder.Entity<Paciente>()
-                .Property(e => e.Nome)
-                .HasMaxLength(100);                 
-                
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
     }
