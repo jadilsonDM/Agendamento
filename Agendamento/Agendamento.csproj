@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Consulta\**" />
+    <Compile Remove="Views\TipoDeExame\**" />
+    <Content Remove="Views\Consulta\**" />
+    <Content Remove="Views\TipoDeExame\**" />
+    <EmbeddedResource Remove="Views\Consulta\**" />
+    <EmbeddedResource Remove="Views\TipoDeExame\**" />
+    <None Remove="Views\Consulta\**" />
+    <None Remove="Views\TipoDeExame\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -14,11 +25,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj" />
     <ProjectReference Include="..\Infraestructure\Infraestructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Consulta\" />
-    <Folder Include="Views\TipoDeExame\" />
   </ItemGroup>
 
 </Project>

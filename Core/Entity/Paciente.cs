@@ -23,5 +23,18 @@ namespace Core.Entity
             Telefone = telefone;
             Email = email;
         }
+
+        public void Atualizar(string nome, string cPF, DateTime dataNscimento, string telefone, string email)
+        {
+
+            Nome = nome;
+            CPF = cPF;
+            DataNscimento = dataNscimento;
+            Telefone = telefone;
+            Email = email;
+
+        }
+
+
     }
 }

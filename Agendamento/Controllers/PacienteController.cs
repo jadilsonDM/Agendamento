@@ -26,7 +26,7 @@ namespace Agendamento.Controllers
 
             foreach (var item in pacientes)
             {
-                pacienteViewModels.Add(new PacienteViewModel(item.Nome, item.CPF, item.DataNscimento, item.Telefone, item.Email, item.Sexo));
+                pacienteViewModels.Add(new PacienteViewModel(item.Id, item.Nome, item.CPF, item.DataNscimento, item.Telefone, item.Email, item.Sexo));
             }
 
             return View(pacienteViewModels);
@@ -47,7 +47,7 @@ namespace Agendamento.Controllers
         // POST: PacienteController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(PacienteModel model)
+        public ActionResult Create(PacienteInputModel model)
         {
             try
             {
@@ -70,10 +70,15 @@ namespace Agendamento.Controllers
         // POST: PacienteController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, PacienteInputModel pacienteimput)
         {
             try
             {
+                var paciente = new Paciente(pacienteimput.Id, pacienteimput.Nome, pacienteimput.CPF, pacienteimput.DataNscimento, pacienteimput.Telefone, pacienteimput.Email); 
+
+                _pacienteServico.Atualizar(id, paciente);
+                
+                
                 return RedirectToAction(nameof(Index));
             }
             catch

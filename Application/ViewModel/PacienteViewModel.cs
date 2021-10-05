@@ -8,15 +8,17 @@ namespace Application.ViewModel
 {
     public class PacienteViewModel
     {
-        public string Nome { get; private set; }
-        public string CPF { get; private set; }
-        public DateTime DataNascimento { get; private set; }
-        public string Telefone { get; private set; }
-        public string Email { get; private set; }
+        public int Id { get;  set; }
+        public string Nome { get;  set; }
+        public string CPF { get;  set; }
+        public DateTime DataNascimento { get;  set; }
+        public string Telefone { get;  set; }
+        public string Email { get;  set; }
         public string Sexo { get; set; }
 
-        public PacienteViewModel(string nome, string cPF, DateTime dataNascimento, string telefone, string email, string sexo)
+        public PacienteViewModel(int id, string nome, string cPF, DateTime dataNascimento, string telefone, string email, string sexo)
         {
+            Id = id;
             Nome = nome;
             CPF = cPF;
             DataNascimento = dataNascimento;
