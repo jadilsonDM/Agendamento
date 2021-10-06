@@ -155,3 +155,10 @@ C:\Users\jadil\Desktop\Agendamento\Agendamento\bin\Debug\net5.0\Application.pdb
 C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Razor\Views\Paciente\Index.cshtml.g.cs
 C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Razor\Views\Paciente\Create.cshtml.g.cs
 C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Razor\Views\Paciente\Edit.cshtml.g.cs
+C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Razor\Views\Paciente\Delete.cshtml.g.cs
+C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Razor\Views\Paciente\Details.cshtml.g.cs
+C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Razor\Views\TipoExame\Create.cshtml.g.cs
+C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Razor\Views\TipoExame\Delete.cshtml.g.cs
+C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Razor\Views\TipoExame\Details.cshtml.g.cs
+C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Razor\Views\TipoExame\Edit.cshtml.g.cs
+C:\Users\jadil\Desktop\Agendamento\Agendamento\obj\Debug\net5.0\Razor\Views\TipoExame\Index.cshtml.g.cs

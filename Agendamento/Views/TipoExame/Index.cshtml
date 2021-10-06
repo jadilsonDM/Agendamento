@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Application.ViewModel.TipoDeExameViewModel>
+
+@{ ViewData["Title"] = "Index"; }
+
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Novo Usuário</a>
+</p>
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeDoTipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeDoTipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                
+                <td>
+                    <a asp-action="Edit" style="width:30px" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Details" style="width:30px" asp-route-id="@item.Id">Detalhes</a> |
+                    <a asp-action="Delete" style="width:30px" asp-route-id="@item.Id">delete</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>

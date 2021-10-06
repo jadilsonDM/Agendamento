@@ -35,7 +35,21 @@ namespace Agendamento.Controllers
         // GET: PacienteController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+
+            var paciente = _pacienteServico.ObterUm(id);
+
+            var pacienteInputModel = new PacienteInputModel
+            {
+                Nome = paciente.Nome,
+                CPF = paciente.CPF,
+                DataNscimento = paciente.DataNscimento,
+                Telefone = paciente.Telefone,
+                Email = paciente.Email,
+
+
+            };
+
+            return View(pacienteInputModel);
         }
 
         // GET: PacienteController/Create
@@ -64,7 +78,24 @@ namespace Agendamento.Controllers
         // GET: PacienteController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+
+
+            var paciente = _pacienteServico.ObterUm(id);
+
+            var pacienteInputModel = new PacienteInputModel
+            {
+                Nome = paciente.Nome,
+                CPF = paciente.CPF,
+                DataNscimento = paciente.DataNscimento,
+                Telefone = paciente.Telefone,
+                Email = paciente.Email,
+
+
+            };
+           
+             
+
+            return View(pacienteInputModel);
         }
 
         // POST: PacienteController/Edit/5
@@ -90,7 +121,22 @@ namespace Agendamento.Controllers
         // GET: PacienteController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var paciente = _pacienteServico.ObterUm(id);
+
+            var pacienteInputModel = new PacienteInputModel
+            {
+                Nome = paciente.Nome,
+                CPF = paciente.CPF,
+                DataNscimento = paciente.DataNscimento,
+                Telefone = paciente.Telefone,
+                Email = paciente.Email,
+
+
+            };
+
+
+
+            return View(pacienteInputModel);
         }
 
         // POST: PacienteController/Delete/5
@@ -100,6 +146,9 @@ namespace Agendamento.Controllers
         {
             try
             {
+
+                _pacienteServico.Deletar(id);
+                
                 return RedirectToAction(nameof(Index));
             }
             catch

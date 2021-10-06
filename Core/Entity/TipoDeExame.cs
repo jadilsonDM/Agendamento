@@ -16,5 +16,14 @@ namespace Core.Entity
             Descricao = descricao;
         }
 
+
+        public void Atualizar(string nomeDoTipo, string descricao)
+        {
+
+            NomeDoTipo = nomeDoTipo;
+            Descricao = descricao;
+        }
+
+
     }
 }

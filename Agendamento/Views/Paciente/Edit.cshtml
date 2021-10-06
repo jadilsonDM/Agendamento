@@ -35,9 +35,18 @@
                 <span asp-validation-for="DataNscimento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Sexo" class="control-label"></label>
-                <input asp-for="Sexo" class="form-control" />
-                <span asp-validation-for="Sexo" class="text-danger"></span>
+                <label asp-for="Sexo" class="form-check-inline">
+                    <input type="radio" asp-for="Sexo" value=" M" />
+                    <span class="form-check-label"> Masculino</span>
+                </label>
+                <label asp-for="Sexo" class="form-check-inline">
+                    <input type="radio" asp-for="Sexo" value=" F" />
+                    <span class="form-check-label"> Feminino</span>
+                </label>
+                <label asp-for="Sexo" class="form-check-inline">
+                    <input type="radio" asp-for="Sexo" value=" Outros" />
+                    <span class="form-check-label"> Outros</span>
+                </label>
             </div>
             <div class="form-group">
                 <a asp-action="Index" class="btn btn-outline-secondary">Voltar</a>

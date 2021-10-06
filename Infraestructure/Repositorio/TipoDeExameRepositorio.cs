@@ -31,10 +31,10 @@ namespace Infraestructure.Repositorio
 
         public void Atualizar(int id, TipoDeExame model)
         {
-            var tipoDeExame = ObterUm(id);
-            if (tipoDeExame != null)
+            var paciente = ObterUm(id);
+            if (paciente != null)
             {
-                _context.TipoDeExames.Update(tipoDeExame);
+                paciente.Atualizar(model.NomeDoTipo, model.Descricao);
                 _context.SaveChanges();
             }
         }

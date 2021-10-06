@@ -16,6 +16,6 @@ namespace Application.InputModel
         public int IdTipoExame { get; set; }
         public TipoDeExame TipoDeExame { get; set; }
 
-
+       
     }
 }
