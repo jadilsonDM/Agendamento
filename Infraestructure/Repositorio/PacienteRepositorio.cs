@@ -30,7 +30,7 @@ namespace Infraestructure.Repositorio
             var paciente = ObterUm(id);
             if (paciente != null)
             {
-                paciente.Atualizar(model.Nome, model.CPF, model.DataNscimento, model.Telefone, model.Email);
+                paciente.Atualizar(model.Nome, model.CPF, model.DataNascimento, model.Telefone, model.Email);
                 _context.SaveChanges();
             }
         }

@@ -2,7 +2,7 @@
 
 @{ ViewData["Title"] = "Edit"; }
 
-<h1>Edit</h1>
+<h1>Editar Paciente</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="CPF" class="control-label"></label>
-                <input asp-for="CPF" class="form-control" />
+                <input asp-for="CPF"  type="number" maxlength="11" class="form-control" />
                 <span asp-validation-for="CPF" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -47,6 +47,7 @@
                     <input type="radio" asp-for="Sexo" value=" Outros" />
                     <span class="form-check-label"> Outros</span>
                 </label>
+                @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = " text-danger" })
             </div>
             <div class="form-group">
                 <a asp-action="Index" class="btn btn-outline-secondary">Voltar</a>

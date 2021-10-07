@@ -1,0 +1,68 @@
+﻿@model Application.InputModel.ConsultaInputModel
+@{
+}
+
+<div class="row">
+
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label class="control-label">Nome do exame</label>
+            <input asp-for="Exame" class="form-control" maxlength="100" />
+            <span asp-validation-for="Exame" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Observação</label>
+            <textarea asp-for="DataDaConsulta" maxlength="1000" class="form-control"></textarea>
+            <span asp-validation-for="DataDaConsulta" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Tipos de exames</label>
+            @Html.DropDownListFor(m => m.TipoDeExame.Id, (IEnumerable<SelectListItem>)ViewBag.TiposExame, "Selecione", new { @id = "comboTipoExame", @class = "form-control" })
+            <span asp-validation-for="Exame" class="text-danger"></span>
+        </div>
+        <script>
+
+        </script>
+        <div class="form-group">
+            @Html.DropDownListFor(m => m.Exame, (IEnumerable<SelectListItem>)ViewBag.Exame, "Selecione", new { @id = "comboExame", @class = "form-control" })
+        </div>
+        <script>
+        </script>
+        <div class="form-group">
+            <a class="btn btn-outline-secondary" asp-controller="Paciente" asp-action="Index">Voltar</a>
+            <input type="submit" value="Salvar" class="btn btn-outline-primary" />
+        </div>
+
+    </form>
+
+
+</div>
+
+
+
+
+@section Scripts
+{
+<script>
+   var teste = $("#comboTipoExame option:selected").val();
+
+    function populaCmbGerencias(teste) {
+        $.ajax({
+            method: 'POST',
+            url: '@Url.Action("ObterExamePorTipoExame", "home")',
+            dataType: 'html',
+            data: { idTorre: idTorre },
+            success: function (data) {
+                console.log('foiii')
+            }
+        });
+    };
+</script>
+}
+
+
+

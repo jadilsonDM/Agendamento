@@ -1,5 +1,10 @@
 ﻿using Agendamento.Models;
+using Application.InputModel;
+using Application.Serviços.Interface;
+using Application.ViewModel;
+using Core.Entity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,27 +16,87 @@ namespace Agendamento.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IPacienteServico _pacienteServico;
+        private readonly IGenericoServico<Exame> _genericoServicoExame;
+        private readonly IGenericoServico<TipoDeExame> _genericoServicoTipoExame;
+        public HomeController(IPacienteServico pacienteServico, IGenericoServico<Exame> genericoServicoExame, IGenericoServico<TipoDeExame> genericoServicoTipoExame)
         {
-            _logger = logger;
+            _pacienteServico = pacienteServico;
+            _genericoServicoExame = genericoServicoExame;
+            _genericoServicoTipoExame = genericoServicoTipoExame;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string searchString)
         {
-            return View();
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                var pacientes = PacienteViews().Where(p => p.Nome.Contains(searchString) || p.CPF == searchString);
+                return View(pacientes);
+            }
+            return View(PacienteViews());
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public ActionResult Consulta(int idPaciente)
         {
-            return View();
+            ObterExamePorTipoExame(null);
+            PopularTipoExames();
+            var consulta = new ConsultaInputModel
+            {
+                DataDaConsulta = DateTime.Now,
+                Exame = null,
+                TipoDeExame = null,
+                Paciente = _pacienteServico.ObterUm(idPaciente)
+            };
+
+            return View(consulta);
+        }
+        
+        public ActionResult ObterExamePorTipoExame(int? idTipoExame)
+        {
+            var exame = new List<Exame>();
+            if (idTipoExame != null)
+            {
+                 exame = _genericoServicoExame.ObterTodos().Where(e => e.IdTipoExame == idTipoExame).ToList();
+
+                ViewBag.Exame = exame.Select(s => new SelectListItem
+                {
+                    Value = s.Id.ToString(),
+                    Text = s.NomeDoExame
+                }).ToList(); 
+            }
+            else
+            {
+                ViewBag.Exame = new List<SelectListItem>();
+            }
+
+            var json = Json(exame);
+            return json;
+
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+      
+        private List<PacienteViewModel> PacienteViews()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var pacienteViewModels = new List<PacienteViewModel>();
+
+            var pacientes = _pacienteServico.ObterTodos();
+
+            foreach (var item in pacientes)
+            {
+                pacienteViewModels.Add(new PacienteViewModel(item.Id, item.Nome, item.CPF, item.DataNascimento, item.Telefone, item.Email, item.Sexo));
+            }
+
+            return pacienteViewModels;
+        }
+        private void PopularTipoExames()
+        {
+            var tiposExames = _genericoServicoTipoExame.ObterTodos().Select(te => new SelectListItem
+            {
+                Value = te.Id.ToString(),
+                Text = te.NomeDoTipo
+            }).ToList();
+            ViewBag.TiposExame = tiposExames;
         }
     }
 }

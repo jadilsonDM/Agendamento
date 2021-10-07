@@ -12,13 +12,19 @@
 
         }
 
-        public Exame(int id, string nomeDoExame, string observacao, int idTipoExame, TipoDeExame tipoDeExame)
+        public Exame(int id, string nomeDoExame, string observacao, int idTipoExame)
         {
             Id = id;
             NomeDoExame = nomeDoExame;
             Observacao = observacao;
             IdTipoExame = idTipoExame;
-            TipoDeExame = tipoDeExame;
+        }
+
+        public void Atualizar(string nomeDoExame, string observacao, int idTipoExame)
+        {
+            NomeDoExame = nomeDoExame;
+            Observacao = observacao;
+            IdTipoExame = idTipoExame;
         }
     }
 }

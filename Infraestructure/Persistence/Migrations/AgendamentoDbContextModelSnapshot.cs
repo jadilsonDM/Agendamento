@@ -35,6 +35,9 @@ namespace Infraestructure.Persistence.Migrations
                     b.Property<int?>("PacienteId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Protocolo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("TipoDeExameId")
                         .HasColumnType("int");
 
@@ -87,7 +90,7 @@ namespace Infraestructure.Persistence.Migrations
                     b.Property<string>("CPF")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DataNscimento")
+                    b.Property<DateTime>("DataNascimento")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -96,6 +99,9 @@ namespace Infraestructure.Persistence.Migrations
                     b.Property<string>("Nome")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Sexo")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefone")
                         .HasColumnType("nvarchar(max)");

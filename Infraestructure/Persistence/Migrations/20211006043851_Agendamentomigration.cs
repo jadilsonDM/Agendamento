@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infraestructure.Persistence.Migrations
 {
-    public partial class AgendamentoMIgration : Migration
+    public partial class Agendamentomigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,8 +15,9 @@ namespace Infraestructure.Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     CPF = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DataNscimento = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataNascimento = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Telefone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Sexo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -69,7 +70,8 @@ namespace Infraestructure.Persistence.Migrations
                     DataDaConsulta = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PacienteId = table.Column<int>(type: "int", nullable: true),
                     ExameId = table.Column<int>(type: "int", nullable: true),
-                    TipoDeExameId = table.Column<int>(type: "int", nullable: true)
+                    TipoDeExameId = table.Column<int>(type: "int", nullable: true),
+                    Protocolo = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

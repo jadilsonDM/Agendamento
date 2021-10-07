@@ -1,0 +1,37 @@
+﻿@model Application.InputModel.ExameInputModel
+
+@{ ViewData["Title"] = "Edit"; }
+
+<h1>Editar Paciente</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Nome do exame</label>
+                <input asp-for="NomeDoExame" class="form-control" maxlength="100" />
+                <span asp-validation-for="NomeDoExame" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Observação</label>
+                <textarea asp-for="Observacao" maxlength="1000" class="form-control"></textarea>
+                <span asp-validation-for="Observacao" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Tipos de exames</label>
+                @Html.DropDownListFor(m => m.IdTipoExame, (IEnumerable<SelectListItem>)ViewBag.TiposExame, "Selecione", new { @id = "comboTipoExame", @class = "form-control" })
+                <span asp-validation-for="IdTipoExame" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <a class="btn btn-outline-secondary" asp-controller="Exame" asp-action="Index">Voltar</a>
+                <input type="submit" value="Salvar" class="btn btn-outline-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

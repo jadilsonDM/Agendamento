@@ -31,7 +31,7 @@ namespace Infraestructure.Repositorio
             var exame = ObterUm(id);
             if (exame != null)
             {
-                _context.Exames.Update(exame);
+                exame.Atualizar(model.NomeDoExame, model.Observacao, model.IdTipoExame);
                 _context.SaveChanges();
             }
         }

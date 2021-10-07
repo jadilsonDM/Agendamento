@@ -9,14 +9,11 @@ namespace Application.InputModel
 {
     public class ConsultaInputModel
     {
-
-
         public int Id { get; set; }
         public DateTime DataDaConsulta { get; set; }
         public Paciente Paciente { get; set; }
         public Exame Exame { get; set; }
         public TipoDeExame TipoDeExame { get; set; }
-
 
 
 

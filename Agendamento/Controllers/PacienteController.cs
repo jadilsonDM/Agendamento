@@ -26,7 +26,7 @@ namespace Agendamento.Controllers
 
             foreach (var item in pacientes)
             {
-                pacienteViewModels.Add(new PacienteViewModel(item.Id, item.Nome, item.CPF, item.DataNscimento, item.Telefone, item.Email, item.Sexo));
+                pacienteViewModels.Add(new PacienteViewModel(item.Id, item.Nome, item.CPF, item.DataNascimento, item.Telefone, item.Email, item.Sexo));
             }
 
             return View(pacienteViewModels);
@@ -42,7 +42,7 @@ namespace Agendamento.Controllers
             {
                 Nome = paciente.Nome,
                 CPF = paciente.CPF,
-                DataNscimento = paciente.DataNscimento,
+                DataNscimento = paciente.DataNascimento,
                 Telefone = paciente.Telefone,
                 Email = paciente.Email,
 
@@ -63,16 +63,15 @@ namespace Agendamento.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(PacienteInputModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                var paciente = new Paciente(model.Id, model.Nome, model.CPF, model.DataNscimento, model.Telefone, model.Email);
-                _pacienteServico.Cadastro(paciente);
+                var paciente = new Paciente(model.Id, model.Nome, model.CPF, model.DataNscimento, model.Telefone, model.Email, model.Sexo);
+                _pacienteServico.Cadastro(paciente); 
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+
+
+            return View();
         }
 
         // GET: PacienteController/Edit/5
@@ -86,15 +85,12 @@ namespace Agendamento.Controllers
             {
                 Nome = paciente.Nome,
                 CPF = paciente.CPF,
-                DataNscimento = paciente.DataNscimento,
+                DataNscimento = paciente.DataNascimento,
                 Telefone = paciente.Telefone,
                 Email = paciente.Email,
 
-
             };
            
-             
-
             return View(pacienteInputModel);
         }
 
@@ -105,7 +101,7 @@ namespace Agendamento.Controllers
         {
             try
             {
-                var paciente = new Paciente(pacienteimput.Id, pacienteimput.Nome, pacienteimput.CPF, pacienteimput.DataNscimento, pacienteimput.Telefone, pacienteimput.Email); 
+                var paciente = new Paciente(pacienteimput.Id, pacienteimput.Nome, pacienteimput.CPF, pacienteimput.DataNscimento, pacienteimput.Telefone, pacienteimput.Email, pacienteimput.Sexo); 
 
                 _pacienteServico.Atualizar(id, paciente);
                 
@@ -127,14 +123,11 @@ namespace Agendamento.Controllers
             {
                 Nome = paciente.Nome,
                 CPF = paciente.CPF,
-                DataNscimento = paciente.DataNscimento,
+                DataNscimento = paciente.DataNascimento,
                 Telefone = paciente.Telefone,
                 Email = paciente.Email,
 
-
             };
-
-
 
             return View(pacienteInputModel);
         }

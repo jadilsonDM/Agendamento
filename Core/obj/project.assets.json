@@ -8,23 +8,25 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\jadil\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\manoel.ribeiro.neto\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jadil\\Desktop\\Agendamento\\Core\\Core.csproj",
+      "projectUniqueName": "C:\\Users\\manoel.ribeiro.neto\\Documents\\Agendamento\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "C:\\Users\\jadil\\Desktop\\Agendamento\\Core\\Core.csproj",
-      "packagesPath": "C:\\Users\\jadil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jadil\\Desktop\\Agendamento\\Core\\obj\\",
+      "projectPath": "C:\\Users\\manoel.ribeiro.neto\\Documents\\Agendamento\\Core\\Core.csproj",
+      "packagesPath": "C:\\Users\\manoel.ribeiro.neto\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\manoel.ribeiro.neto\\Documents\\Agendamento\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jadil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\manoel.ribeiro.neto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,7 +35,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nugetserver.tlfbpo.com.br/nuget": {}
       },
       "frameworks": {
         "net5.0": {
@@ -65,7 +68,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

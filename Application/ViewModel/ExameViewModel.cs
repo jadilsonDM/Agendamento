@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.ViewModel
 {
-    partial class ExameViewModel
+    public class ExameViewModel
     {
         public int Id { get; set; }
         public string NomeDoExame { get; set; }
